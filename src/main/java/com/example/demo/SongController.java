@@ -6,20 +6,25 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/songs")
+@RequestMapping()
 public class SongController {
 
     @Autowired
     private SongRepository songRepository;
 
-    @GetMapping(path = "/", produces = "application/json")
+    @GetMapping(path = "/song", produces = "application/json")
     public List<Song> getSongList() {
         return songRepository.getList();
     }
 
-    @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/song", consumes = "application/json", produces = "application/json")
     public Song addSong(@RequestBody Song song) {
         songRepository.addSong(song);
         return song;
+    }
+    @PostMapping(path = "/songs", consumes = "application/json", produces = "application/json")
+    public List<Song> addSong(@RequestBody List<Song> listOfSongs) {
+        songRepository.addList(listOfSongs);
+        return listOfSongs;
     }
 }

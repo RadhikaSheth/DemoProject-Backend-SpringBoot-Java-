@@ -9,8 +9,6 @@ public class Song {
     private double songDanceability;
     private double songAcousticness;
 
-    public Song() {
-    }
 
     public Song(String name, String songAlbum, int songDuration, String songKey, double songDanceability, double songAcousticness) {
         this.name = name;
@@ -19,30 +17,6 @@ public class Song {
         this.songKey = songKey;
         this.songDanceability = songDanceability;
         this.songAcousticness = songAcousticness;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSongDuration(int songDuration) {
-        this.songDuration = songDuration;
-    }
-
-    public void setSongKey(String songKey) {
-        this.songKey = songKey;
-    }
-
-    public void setSongDanceability(double songDanceability) {
-        this.songDanceability = songDanceability;
-    }
-
-    public void setSongAcousticness(double songAcousticness) {
-        this.songAcousticness = songAcousticness;
-    }
-
-    public void setSongAlbum(String songAlbum) {
-        this.songAlbum = songAlbum;
     }
 
     public String getName() {
@@ -67,5 +41,29 @@ public class Song {
 
     public double getSongAcousticness() {
         return songAcousticness;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSongDuration(int songDuration) {
+        this.songDuration = songDuration;
+    }
+
+    public void setSongKey(String songKey) {
+        this.songKey = songKey;
+    }
+
+    public void setSongDanceability(double songDanceability) {
+        this.songDanceability = songDanceability;
+    }
+
+    public void setSongAcousticness(double songAcousticness) {
+        this.songAcousticness = songAcousticness;
+    }
+
+    public void setSongAlbum(String songAlbum) {
+        this.songAlbum = songAlbum;
     }
 }
