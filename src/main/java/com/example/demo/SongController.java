@@ -10,21 +10,21 @@ import java.util.List;
 public class SongController {
 
     @Autowired
-    private SongRepository songRepository;
+    private SongService songService;
 
     @GetMapping(path = "/song", produces = "application/json")
     public List<Song> getSongList() {
-        return songRepository.getList();
+        return songService.getList();
     }
 
     @PostMapping(path = "/song", consumes = "application/json", produces = "application/json")
     public Song addSong(@RequestBody Song song) {
-        songRepository.addSong(song);
+        songService.addSong(song);
         return song;
     }
     @PostMapping(path = "/songs", consumes = "application/json", produces = "application/json")
     public List<Song> addSong(@RequestBody List<Song> listOfSongs) {
-        songRepository.addList(listOfSongs);
+        songService.addList(listOfSongs);
         return listOfSongs;
     }
 }
