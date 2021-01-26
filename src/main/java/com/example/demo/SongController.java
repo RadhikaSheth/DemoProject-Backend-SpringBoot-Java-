@@ -13,6 +13,7 @@ public class SongController {
     private SongService songService;
 
     @GetMapping(path = "/song", produces = "application/json")
+    @CrossOrigin(origins = "*")
     public List<Song> getSongList() {
         return songService.getList();
     }
@@ -23,6 +24,7 @@ public class SongController {
         return song;
     }
     @PostMapping(path = "/songs", consumes = "application/json", produces = "application/json")
+    @CrossOrigin(origins = "*")
     public List<Song> addSong(@RequestBody List<Song> listOfSongs) {
         songService.addList(listOfSongs);
         return listOfSongs;
